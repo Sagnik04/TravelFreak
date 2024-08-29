@@ -223,6 +223,12 @@ class _DisplayState extends State<Display> {
                             child: ListTile(
                               title: Text(travdocs[index]['Place'],style: TextStyle(fontSize: 40),),
                               subtitle: Text(travdocs[index]['Name'],style: TextStyle(fontSize: 24),),
+                              trailing: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(travdocs[index]['Date'],style: TextStyle(fontSize: 16),),
+                                ],
+                              ),
                               onTap: (){
                                 Navigator.push(context, MaterialPageRoute(builder: (context)=>Edit(place: travdocs[index]['Place'], name: travdocs[index]['Name'], description: travdocs[index]['Description'])));
                               },

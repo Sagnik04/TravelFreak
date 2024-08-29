@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:intl/intl.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 create(var name,place,description,email,uid,docid)async{
@@ -9,7 +10,7 @@ create(var name,place,description,email,uid,docid)async{
     'Description' : description,
     'Email' : email,
     'uid' : uid,
-    'Month' : DateTime.now().month.toString(),
+    'Date' : DateFormat('yMMMMd').format(DateTime.now()).toString(),
     'Doc Id' : docid,
 
   });
