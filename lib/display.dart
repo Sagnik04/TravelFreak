@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -221,8 +222,8 @@ class _DisplayState extends State<Display> {
 
                           child: Card(
                             child: ListTile(
-                              title: Text(travdocs[index]['Place'],style: TextStyle(fontSize: 40),),
-                              subtitle: Text(travdocs[index]['Name'],style: TextStyle(fontSize: 24),),
+                              title: AutoSizeText(travdocs[index]['Place'],style: TextStyle(fontSize: 40),maxLines: 1,),
+                              subtitle: AutoSizeText(travdocs[index]['Name'],style: TextStyle(fontSize: 24),maxLines: 1,),
                               trailing: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
